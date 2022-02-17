@@ -14,10 +14,20 @@ function App() {
         setUsers(res.data.results);
       }).catch(err => console.error(err))
   }, [])
-  
+
   return (
-    <div className="App">
+    <div className="app">
       <h1>WELCOME TO CASEYBOOK!</h1>
+      {users.map(user => {
+        return (
+          <div key={user.login.uuid} className="user-wrapper">
+            <h2>Username: {user.login.username}</h2>
+            <img src={user.picture.medium} alt="User" />
+            <p>First name: {user.name.first}</p>
+            <p>Location: {user.location.city}</p>
+          </div>
+        )
+      })}
     </div>
   );
 }
