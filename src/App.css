@@ -12,3 +12,7 @@ body {
   align-items: center;
 }
 
+img {
+  max-width: 50%;
+  object-fit: cover;
+}
