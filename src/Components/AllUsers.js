@@ -1,4 +1,7 @@
 import React from 'react';
+import User from './User';
+
+// PROPS ARE IMMUTABLE
 
 const AllUsers = (props) => {
   return (
@@ -10,6 +13,7 @@ const AllUsers = (props) => {
             <img src={user.picture.medium} alt="User" />
             <p>First name: {user.name.first}</p>
             <p>Location: {user.location.city}</p>
+            <User name={user.name.first} />
           </div>
         )
       })}
